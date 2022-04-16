@@ -6,7 +6,7 @@ local ESP = {
     objects = {},
     bind = Enum.KeyCode.P,
     quads = {},
-    func = nil
+    func = function() end
 }
 
 getgenv().toggle = true 
@@ -97,9 +97,7 @@ end)
 
 RunService.RenderStepped:Connect(function(_w)
     ESP.clear()
-    if ESP.func ~= nil then
-        ESP.func()
-    end
+    ESP.func()
     ESP.render()
 end)    
 
