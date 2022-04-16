@@ -97,8 +97,11 @@ end)
 
 RunService.RenderStepped:Connect(function(_w)
     ESP.clear()
-    ESP.func()
+    if ESP.func ~= nil then
+        ESP.func()
+    end
     ESP.render()
-end)
+end)    
+
 
 return ESP
